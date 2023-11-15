@@ -9,7 +9,7 @@
 void push(stack_t **stack, int value, unsigned int line_number)
 {
 stack_t *new_node = malloc(sizeof(stack_t));
-printf("Pushing %d to the stack at line %d\n", value, line_number);
+printf( "%d\n",line_number);
 
 if (!new_node)
 {
@@ -39,7 +39,6 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 stack_t *current = *stack;
 printf("Printing all values on the stack at line %d\n", line_number);
-(void)line_number;
 while (current != NULL)
 {
 printf("%d\n", current->n);

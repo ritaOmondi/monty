@@ -12,19 +12,24 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 1;
 	stack_t *stack = NULL;
 	FILE *file = fopen(argv[1], "r");
+	size_t opcode_len = strlen(opcode);
 if (argc != 2)
 {
-fprintf(stderr, "USAGE: %s file\n", argv[0]);
-return (EXIT_FAILURE);
+fprintf(stderr, "USAGE: monty file\n");
+exit (EXIT_FAILURE);
 }
 if (file == NULL)
 {
 fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 return (EXIT_FAILURE);
 }
-while (fscanf(file, "%s %d", opcode, &value) == 2)
+while (fscanf(file, "%255s %d", opcode, &value) == 2)
 {
-printf("Process line %d: opcode=%s, value=%d\n", line_number, opcode, value);
+/**printf(" opcode=%s\n", opcode); **/
+    if (opcode[opcode_len - 1] == '$')
+    {
+        opcode[opcode_len - 1] = '\0';
+    }
 if (strcmp(opcode, "push") == 0)
 {
 push(&stack, value, line_number);
