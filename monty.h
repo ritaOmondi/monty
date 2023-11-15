@@ -2,9 +2,27 @@
 #define MONTY_H
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <fcntl.h>
 #include <sys/types.h>
+#include <sys/stat.h>
+#include <string.h>
+#include <unistd.h>
+#include <ctype.h>
+#include <fcntl.h>
+#include <stdarg.h>
+
+/** global variables **/
+/**
+* struct value - holds value in global scope
+* @value: actual value
+*
+* Description: to allow me to access this value globally
+*/
+typedef struct value
+{
+	int value;
+} value_s;
+extern value_s variable;
+value_s variable;
 
 /**structures **/
 /**
@@ -37,7 +55,12 @@ typedef struct instruction_s
 } instruction_t;
 
 /**** prototypes **/
-void push(stack_t **stack, int value, unsigned int line_number);
+void push(stack_t **stack,  unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t *stack);
+void free_stack(stack_t **stack, unsigned int line_number);
+void operations(stack_t **stack, unsigned int line_number, char *token);
+void pass_token(char *input, stack_t **stack, unsigned int line_number);
+void pint(stack_t **head, unsigned int line_number);
+int confirm_dgts(char *token);
+void pop(stack_t **stack, unsigned int line_number);
 #endif

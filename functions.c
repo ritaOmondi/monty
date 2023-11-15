@@ -3,31 +3,32 @@
 /**
  * push - Pushes an element to the stack.
  * @stack: Pointer to the top of the stack.
- * @value: Value to be pushed onto the stack.
  * @line_number: Line number in the Monty ByteCode file.
  */
-void push(stack_t **stack, int value, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
 stack_t *new_node = malloc(sizeof(stack_t));
-printf( "%d\n",line_number);
-
-if (!new_node)
+if (stack == NULL)
 {
-fprintf(stderr, "L%d: Error: malloc failed\n", line_number);
+printf( "%d\n",line_number);
+exit (EXIT_FAILURE);
+}
+
+if (new_node == NULL)
+{
+fprintf(stderr, " Error: malloc failed\n");
+free_stack(stack, line_number);
 exit(EXIT_FAILURE);
 }
-new_node->n = value;
+new_node->n = variable.value;
 new_node->prev = NULL;
-if (*stack == NULL)
+new_node->next = *stack;
+if (*stack != NULL)
 {
 new_node->next = NULL;
-}
-else
-{
-new_node->next = *stack;
 (*stack)->prev = new_node;
-}
 *stack = new_node;
+}
 }
 
 /**
@@ -38,20 +39,25 @@ new_node->next = *stack;
 void pall(stack_t **stack, unsigned int line_number)
 {
 stack_t *current = *stack;
-printf("Printing all values on the stack at line %d\n", line_number);
+
+if (stack == NULL)
+{
+fprintf(stderr, "L%d: invalid stack\n", line_number);
+	exit(EXIT_FAILURE);
+}
 while (current != NULL)
 {
 printf("%d\n", current->n);
 current = current->next;
 }
 }
-void free_stack(stack_t *stack)
+void free_stack(stack_t **stack, unsigned int line_number)
 {
-while (stack != NULL)
+if (stack == NULL)
+	return;
+while (*stack != NULL)
 {
-stack_t *temp = stack;
-stack = stack->next;
-free(temp);
+pop(stack, line_number);
 }
 }
 
