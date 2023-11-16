@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-* number - checks if current character is numeric
+* confirm_dgts - checks if current character is numeric
 * @token: string to be checked
 *
 * Return: 1 if number, 0 if not

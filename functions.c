@@ -10,8 +10,8 @@ void push(stack_t **stack, unsigned int line_number)
 stack_t *new_node = malloc(sizeof(stack_t));
 if (stack == NULL)
 {
-printf( "%d\n",line_number);
-exit (EXIT_FAILURE);
+printf("%d\n", line_number);
+exit(EXIT_FAILURE);
 }
 
 if (new_node == NULL)
@@ -51,6 +51,12 @@ printf("%d\n", current->n);
 current = current->next;
 }
 }
+/**
+ * free_stack - function that frees the whole program
+ * @stack: pointer to the head
+ * @line_number: data value
+ * Return: nothing
+ */
 void free_stack(stack_t **stack, unsigned int line_number)
 {
 if (stack == NULL)

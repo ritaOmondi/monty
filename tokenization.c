@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-* tokenizer - tokenizes string
+* pass_token - tokenizes string
 * @input: string to be tokenized
 * @stack: pointer to pointer to stack
 * @line_number: the number of the line where command is
