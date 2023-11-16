@@ -10,11 +10,11 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
 	{
-		vprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line_number);
+		write(2, "L%u: can't swap, stack too short\n", line_number);
 		free_stack(stack, line_number);
 		exit(EXIT_FAILURE);
 	}
-	temp = (*head)->n;
+	temp = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = temp;
 }
