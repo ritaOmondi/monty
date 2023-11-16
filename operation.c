@@ -17,16 +17,16 @@ void operations(stack_t **stack, unsigned int line_number, char *token)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
-	/**	{"add", add},
+		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", _div},
-		{"mul", _mul},
-		{"mod", _mod},
-		{"pchar", _pchar},
+		{"div", division},
+		{"mul", multiplication},
+		{"mod", modulus},
+	/**	{"pchar", _pchar},
 		{"pstr", _pstr},
 		{"rotl", _rotl},
-		{"rotr", _rotr}, **/
+		{"rotr", _rotr},**/ 
 		{NULL, NULL}
 	};
 

@@ -63,5 +63,11 @@ void operations(stack_t **stack, unsigned int line_number, char *token);
 void pass_token(char *input, stack_t **stack, unsigned int line_number);
 void pint(stack_t **head, unsigned int line_number);
 int confirm_dgts(char *token);
+void nop(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void modulus(stack_t **stack, unsigned int line_number);
+void multiplication(stack_t **stack, unsigned int line_number);
+void division(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 #endif
