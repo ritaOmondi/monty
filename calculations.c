@@ -52,7 +52,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _div - divides second top element of stack by top of stack
+ * division - divides second top element of stack by top of stack
  * @stack: stack
  * @line_number: line number
  * Return: void
@@ -85,7 +85,7 @@ void division(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _mul - multiplies second top element of stack with top element
+ * multiplication - multiplies second top element of stack with top element
  * @stack: stack
  * @line_number: line number
  * Return: void
@@ -111,7 +111,7 @@ void multiplication(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _mod -computes the rest of the division of the second
+ * modulus - computes the rest of the division of the second
  * top element of the stack by the top element of the stack
  * @stack: stack
  * @line_number: line number
