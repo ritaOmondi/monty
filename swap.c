@@ -7,6 +7,7 @@
 void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp = 0;
+
 	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
 	{
 		write(2, "L%u: can't swap, stack too short\n", line_number);
