@@ -2,9 +2,9 @@
 
 /**
  *addEnode - add node at the end of doubly linked list
- *@head: head pointer
+ *@stack: head pointer
  *@n: data to add
- *Return: zero
+ *Return: 0
  */
 int addEnode(stack_t **stack, int n)
 {
@@ -27,7 +27,7 @@ int addEnode(stack_t **stack, int n)
 		new_node->next  = NULL;
 		new_node->prev = NULL;
 	}
-	else 
+	else
 	{
 		new_node->next = *stack;
 		(*stack)->prev = new_node;
@@ -62,7 +62,7 @@ void deleteEnode(stack_t **head)
 
 /**
  * free_dllist - frees a doubly linked list with only int data, no strings
- * @head: pointer to head of list
+ * @stack: pointer to head of list
  */
 void free_dllist(stack_t **stack)
 {
