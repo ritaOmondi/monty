@@ -1,12 +1,15 @@
 #include "monty.h"
 #define _GNU_SOURCE
-int isascii(int c);
+/**
+ * int isascii(int c);
+ */
 /**
  * pchar - prints the char at the top of the stack
  * @head: stack pointer
  * @line_number: line number
  * Return: void
  */
+/**
 void pchar(stack_t **head, unsigned int line_number)
 {
 	if (head == NULL || *head == NULL)
@@ -24,6 +27,7 @@ void pchar(stack_t **head, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 }
+**/
 
 /**
  * pstr -prints the string starting at the top of the stack
@@ -31,6 +35,7 @@ void pchar(stack_t **head, unsigned int line_number)
  * @line_number: line number
  * Return: void
  */
+/**
 void pstr(stack_t **head, unsigned int line_number)
 {
 	stack_t *str;
@@ -51,7 +56,7 @@ void pstr(stack_t **head, unsigned int line_number)
 	}
 	printf("\n");
 }
-
+**/
 /**
  * rotl - rotates the stack to the top
  * @head: stack pointer
