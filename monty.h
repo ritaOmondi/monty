@@ -70,4 +70,11 @@ void multiplication(stack_t **stack, unsigned int line_number);
 void division(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void free_dllist(stack_t **stack);
+void deleteEnode(stack_t **head);
+int addEnode(stack_t **stack, int n);
+void rotr(stack_t **head, unsigned int line_number);
+void rotl(stack_t **head, unsigned int line_number);
+void pstr(stack_t **head, unsigned int line_number);
+void pchar(stack_t **head, unsigned int line_number);
 #endif

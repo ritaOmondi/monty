@@ -23,13 +23,10 @@ void operations(stack_t **stack, unsigned int line_number, char *token)
 		{"div", division},
 		{"mul", multiplication},
 		{"mod", modulus},
-	/**
-	 *
-		{"pchar", _pchar},
-		{"pstr", _pstr},
-		{"rotl", _rotl},
-		{"rotr", _rotr},
-	 **/
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 
