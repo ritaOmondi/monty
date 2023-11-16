@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-* execute_ops - executes according to operaction code
+* operations - executes according to operaction code
 * @stack: pointer to pointer to stack
 * @line_number: number of the line
 * @token: tokenized input
@@ -23,10 +23,13 @@ void operations(stack_t **stack, unsigned int line_number, char *token)
 		{"div", division},
 		{"mul", multiplication},
 		{"mod", modulus},
-	/**	{"pchar", _pchar},
+	/**
+	 *
+		{"pchar", _pchar},
 		{"pstr", _pstr},
 		{"rotl", _rotl},
-		{"rotr", _rotr},**/ 
+		{"rotr", _rotr},
+	 **/
 		{NULL, NULL}
 	};
 
